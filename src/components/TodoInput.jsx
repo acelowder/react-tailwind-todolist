@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function TodoInput() {
+export default function TodoInput({ handleAddTodo }) {
+	const [todoText, setTodoText] = useState('');
+
+	const addTodo = () => {
+		handleAddTodo(todoText);
+		setTodoText('');
+	};
+
 	return (
 		<header>
-			<input placeholder="Enter a new task" />
-			<button>+</button>
+			<input
+				value={todoText}
+				onChange={(e) => {
+					setTodoText(e.target.value);
+				}}
+				placeholder="Enter a new task"
+			/>
+			<button onClick={addTodo}>+</button>
 		</header>
 	);
 }
