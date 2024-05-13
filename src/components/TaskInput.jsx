@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './TodoInput.css';
+import './TaskInput.css';
 
-export default function TodoInput({ handleAddTodo }) {
+export default function TaskInput({ handleAddTodo }) {
 	const [todoText, setTodoText] = useState('');
 
 	const addTodo = () => {
@@ -11,7 +11,7 @@ export default function TodoInput({ handleAddTodo }) {
 
 	return (
 		<form
-			className="todo-input-form flex items-center p-2 bg-gray-100 rounded-lg shadow-inner mb-4"
+			className="todo-input-form flex items-center p-2 bg-gray-50 rounded-lg shadow-inner mb-4"
 			onSubmit={(e) => e.preventDefault()}
 		>
 			<input

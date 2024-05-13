@@ -1,20 +1,20 @@
-.todo-input-form:focus-within {
+.input-form:focus-within {
 	outline: 1px solid #ccc;
 }
 
-.todo-input-form button {
+.input-form button {
 	background: #ccd5ae;
 	color: #fff;
 	border: 1px solid #ccd5ae;
 }
 
-.todo-input-form button:disabled {
+.input-form button:disabled {
 	background: none;
 	color: #ddd;
 	border: 1px solid #ddd;
 }
 
-.todo-input-form button:not([disabled]):hover {
+.input-form button:not([disabled]):hover {
 	background: #c1cf93;
 	box-shadow: 0 0 6px #e9edc9;
 }
