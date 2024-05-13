@@ -5,13 +5,8 @@ import TodoManager from './components/TodoManager';
 
 function App() {
 	return (
-		<main className="flex justify-center align-center h-screen">
-			<div className="panel">
-				<h1>
-					TO <b>-</b> DO LIST
-				</h1>
-				<TodoManager />
-			</div>
+		<main className="flex justify-center align-center">
+			<TodoManager />
 		</main>
 	);
 }

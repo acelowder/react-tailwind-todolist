@@ -1,4 +1,3 @@
-import React from 'react';
 import TodoTask from './TodoTask';
 
 export default function TodoList({ todos }) {

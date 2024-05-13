@@ -1,5 +1,5 @@
-import React from 'react';
-
 export default function TodoTask({ todo }) {
-	return <li className="task-item">{todo}</li>;
+	return (
+		<li className="flex justify-between items-center px-2 py-1">{todo}</li>
+	);
 }

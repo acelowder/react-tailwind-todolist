@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoList from './TodoList';
 import TodoInput from './TodoInput';
+import TodoTitle from './TodoTitle';
 
 export default function TodoManager() {
 	const [todos, setTodos] = useState([
@@ -14,9 +15,10 @@ export default function TodoManager() {
 	}
 
 	return (
-		<>
+		<div className="flex flex-col w-96 bg-white rounded-2xl p-6 m-6 shadow-md">
+			<TodoTitle />
 			<TodoInput handleAddTodo={handleAddTodo} />
 			<TodoList todos={todos} />
-		</>
+		</div>
 	);
 }
