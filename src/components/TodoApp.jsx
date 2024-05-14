@@ -21,7 +21,6 @@ export default function TodoApp() {
 		const newTodos = [...todos];
 		newTodos[index] = newTodo;
 		setTodos(newTodos);
-		console.log(newTodos);
 	};
 
 	return (
