@@ -15,10 +15,10 @@ export default function TodoList() {
 	}
 
 	return (
-		<div className="flex flex-col w-96 bg-white rounded-2xl p-6 m-6 shadow-md">
+		<div className="flex flex-col bg-white rounded-2xl p-6 m-6 shadow-md w-auto">
 			<Title />
 			<TaskInput handleAddTodo={handleAddTodo} />
-			<hr className="my-2" />
+			<hr className="my-2 border-gray-300" />
 			<List todos={todos} />
 		</div>
 	);

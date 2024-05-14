@@ -11,7 +11,7 @@ export default function TaskInput({ handleAddTodo }) {
 
 	return (
 		<form
-			className="todo-input-form flex items-center p-2 bg-gray-50 rounded-lg shadow-inner mb-4"
+			className="input-form flex items-center px-3 py-2 bg-gray-50 rounded-lg shadow-inner mb-4"
 			onSubmit={(e) => e.preventDefault()}
 		>
 			<input
@@ -23,7 +23,7 @@ export default function TaskInput({ handleAddTodo }) {
 				placeholder="Enter a new task"
 			/>
 			<button
-				className="rounded-md bg-gray-50 px-2 py-1 text-2xl leading-5 transition-all duration-200"
+				className="rounded-md bg-gray-50 px-2 py-1 pb-1.5 text-2xl leading-5 transition-all duration-200"
 				onClick={addTodo}
 			>
 				+
