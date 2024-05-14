@@ -1,26 +1,37 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import TodoTitle from './TodoTitle';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 const initialTodos = [
-	'This is your task list',
-	'Click on a task to complete it',
-	'Drag and drop to change the order',
+	{ id: uuidv4(), text: 'This is your task list', completed: false },
+	{ id: uuidv4(), text: 'Click on a task to complete it', completed: false },
+	{ id: uuidv4(), text: 'Drag to change the order', completed: false },
 ];
 
 export default function TodoApp() {
 	const [todos, setTodos] = useState(initialTodos);
 
-	const handleAddTodo = (todo) => setTodos([...todos, todo]);
+	const handleAddTodo = (todo) =>
+		setTodos([...todos, { id: uuidv4(), text: todo, completed: false }]);
 
-	const handleRemoveTodo = (index) =>
-		setTodos(todos.filter((_, i) => i !== index));
+	const handleRemoveTodo = (id) => {
+		setTodos(todos.filter((todo) => todo.id !== id));
+	};
 
-	const handleEditTodo = (index, newTodo) => {
-		const newTodos = [...todos];
-		newTodos[index] = newTodo;
-		setTodos(newTodos);
+	const handleEditTodo = (id, newTodoText) => {
+		setTodos(
+			todos.map((todo) => {
+				if (todo.id === id) {
+					return {
+						...todo,
+						text: newTodoText,
+					};
+				}
+				return todo;
+			})
+		);
 	};
 
 	return (

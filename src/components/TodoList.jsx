@@ -3,13 +3,15 @@ import TodoTask from './TodoTask';
 export default function TodoList({ todos, onDeleteTodo, onEditTodo }) {
 	return (
 		<ul className="flex flex-col">
-			{todos.map((todoText, index) => {
+			{todos.map((todo, index) => {
 				return (
 					<TodoTask
-						key={index}
-						todoText={todoText}
-						onDeleteTodo={() => onDeleteTodo(index)}
-						onEditTodo={(newText) => onEditTodo(index, newText)}
+						key={todo.id}
+						todoText={todo.text}
+						onDeleteTodo={() => onDeleteTodo(todo.id)}
+						onEditTodo={(newTodoText) =>
+							onEditTodo(todo.id, newTodoText)
+						}
 					/>
 				);
 			})}
