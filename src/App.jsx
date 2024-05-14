@@ -1,10 +1,9 @@
-import './App.css';
-import TodoList from './components/TodoList';
+import TodoApp from './components/TodoApp';
 
 function App() {
 	return (
-		<main className="flex justify-center align-center">
-			<TodoList />
+		<main className="flex justify-center">
+			<TodoApp />
 		</main>
 	);
 }
