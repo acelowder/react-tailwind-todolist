@@ -7,20 +7,20 @@ import TodoList from './TodoList';
 const initialTodos = [
 	{ id: uuidv4(), text: 'This is your task list', completed: false },
 	{ id: uuidv4(), text: 'Click on a task to complete it', completed: false },
-	{ id: uuidv4(), text: 'Drag to change the order', completed: false },
+	{ id: uuidv4(), text: 'Hover to view more options', completed: false },
 ];
 
 export default function TodoApp() {
 	const [todos, setTodos] = useState(initialTodos);
 
-	const handleAddTodo = (todo) =>
-		setTodos([...todos, { id: uuidv4(), text: todo, completed: false }]);
+	const addTodo = (todo) =>
+		setTodos([...todos, { id: uuidv4(), text: todo }]);
 
-	const handleRemoveTodo = (id) => {
+	const removeTodo = (id) => {
 		setTodos(todos.filter((todo) => todo.id !== id));
 	};
 
-	const handleEditTodo = (id, newTodoText) => {
+	const editTodo = (id, newTodoText) => {
 		setTodos(
 			todos.map((todo) => {
 				if (todo.id === id) {
@@ -34,18 +34,33 @@ export default function TodoApp() {
 		);
 	};
 
+	const toggleTodo = (id) => {
+		setTodos(
+			todos.map((todo) => {
+				if (todo.id === id) {
+					return {
+						...todo,
+						completed: !todo.completed,
+					};
+				}
+				return todo;
+			})
+		);
+	};
+
 	return (
 		<div
 			style={{ width: 500 }}
 			className="todo flex flex-col max-w-full p-6 m-6 bg-white rounded-2xl shadow-md"
 		>
 			<TodoTitle />
-			<TodoInput handleAddTodo={handleAddTodo} />
+			<TodoInput onSubmit={addTodo} />
 			<hr className="mt-2 border-gray-300" />
 			<TodoList
 				todos={todos}
-				onDeleteTodo={handleRemoveTodo}
-				onEditTodo={handleEditTodo}
+				onDelete={removeTodo}
+				onEdit={editTodo}
+				onToggle={toggleTodo}
 			/>
 		</div>
 	);

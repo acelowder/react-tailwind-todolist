@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-export default function TodoInput({ handleAddTodo }) {
+export default function TodoInput({ onSubmit }) {
 	const [todoText, setTodoText] = useState('');
 
 	const handleInputChange = (e) => setTodoText(e.target.value);
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
-		handleAddTodo(todoText);
+		onSubmit(todoText);
 		setTodoText('');
 	};
 
@@ -22,7 +22,7 @@ export default function TodoInput({ handleAddTodo }) {
 				placeholder="Enter a new task"
 			/>
 			<button
-				className="px-2 pt-1 pb-1.5 text-2xl leading-5 rounded-md text-white bg-gray-200"
+				className="px-2 py-1 text-2xl leading-5 rounded-md text-white bg-gray-200"
 				onClick={handleFormSubmit}
 			>
 				+
