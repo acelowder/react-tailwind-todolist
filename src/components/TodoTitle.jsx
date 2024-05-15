@@ -1,9 +1,13 @@
-const TITLE_TEXT = 'TO - DO LIST';
+const TITLE_ICON = '📝';
+const TITLE_TEXT = 'To - Do List';
 
 export default function TodoTitle() {
 	return (
-		<h1 className="text-center mt-2 mb-6 text-4xl font-serif font-normal">
-			{TITLE_TEXT}
-		</h1>
+		<>
+			<h1 className="-mt-1 mb-6 text-2xl font-bold">
+				<span className="mr-3">{TITLE_ICON}</span>
+				{TITLE_TEXT}
+			</h1>
+		</>
 	);
 }

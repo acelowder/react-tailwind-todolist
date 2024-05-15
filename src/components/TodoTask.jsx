@@ -8,6 +8,7 @@ export default function TodoTask({
 	onEdit,
 	onToggle,
 }) {
+	const textContainerRef = useRef(null);
 	const textFieldRef = useRef(null);
 
 	const moveTextCursorToEnd = () => {
@@ -33,47 +34,50 @@ export default function TodoTask({
 		}
 	};
 
-	const handleDivBlur = (e) => {
+	const handleSpanBlur = (e) => {
 		onEdit(e.currentTarget.innerText);
-		e.currentTarget.setAttribute('contentEditable', false);
+		textFieldRef.current.setAttribute('contentEditable', false);
 	};
 
 	const handleDivClick = (e) => {
-		if (e.target === textFieldRef.current) editText(e);
+		if (e.target === textContainerRef.current) editText(e);
 	};
 
 	return (
 		<li
-			className="group flex justify-between items-start min-h-12 px-2 py-2 border-b-2 border-gray-50 last:border-b-0 hover:bg-gray-50 transition duration-200"
+			className="group flex justify-between items-start min-h-12 px-2 py-2 border-b-2 border-zinc-700 border-opacity-60 last:border-b-0 hover:bg-zinc-600 hover:bg-opacity-10 transition duration-200"
 			onClick={onToggle}
 		>
 			<input
 				type="checkbox"
-				className="h-4 w-4 mt-2 mx-1 hover:cursor-pointer group-hover:ml-3 transition-all duration-200"
+				className="h-4 w-4 mt-2 mx-1 hover:cursor-pointer group-hover:ml-2.5 transition-all duration-200"
 				checked={isCompleted}
 				onChange={onToggle}
 			/>
 			<div
-				ref={textFieldRef}
+				ref={textContainerRef}
 				contentEditable={false}
 				suppressContentEditableWarning
-				className={`flex-1 bg-transparent min-h-8 leading-8 pr-6 mx-2 break-all focus:outline-none hover:cursor-text ${
+				className={`flex-1 bg-transparent min-h-8 leading-8 pr-6 mx-2 break-all hover:cursor-text ${
 					isCompleted ? 'line-through' : ''
 				}`}
-				onBlur={handleDivBlur}
-				onKeyDown={handleEnterKey}
 				onClick={handleDivClick}
 			>
-				<span className="py-2 select-none hover:cursor-default">
+				<span
+					ref={textFieldRef}
+					className="py-2 text-sm select-none hover:cursor-default focus:outline-none"
+					onBlur={handleSpanBlur}
+					onKeyDown={handleEnterKey}
+				>
 					{todoText}
 				</span>
 			</div>
 			<MdEdit
-				className="mt-2 text-gray-400 opacity-0 group-hover:opacity-100 hover:cursor-pointer hover:text-gray-600 transition duration-200"
+				className="mt-2 text-zinc-600 opacity-0 group-hover:opacity-100 hover:cursor-pointer hover:text-zinc-400 transition duration-200"
 				onClick={editText}
 			/>
 			<MdClose
-				className="mt-1.5 ml-1 h-5 w-5 text-gray-400 opacity-0 group-hover:opacity-100 hover:cursor-pointer hover:text-gray-600 transition duration-200"
+				className="mt-1.5 ml-1.5 h-5 w-5 text-zinc-600 opacity-0 group-hover:opacity-100 hover:cursor-pointer hover:text-zinc-400 transition duration-200"
 				onClick={(e) => {
 					e.stopPropagation();
 					onDelete();

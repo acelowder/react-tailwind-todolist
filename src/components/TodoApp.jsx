@@ -73,11 +73,11 @@ export default function TodoApp() {
 	return (
 		<div
 			style={{ width: 500 }}
-			className="todo flex flex-col max-w-full p-6 m-6 bg-white rounded-2xl shadow-md"
+			className="todo flex flex-col max-w-full p-6 m-6 rounded-lg bg-zinc-800 border border-zinc-700 shadow-lg"
 		>
 			<TodoTitle />
 			<TodoInput onSubmit={addTodo} />
-			<hr className="mt-2 border-gray-300" />
+			<hr className="mt-2 border-zinc-500 border-opacity-60" />
 			<TodoList
 				todos={todos}
 				onDelete={removeTodo}
