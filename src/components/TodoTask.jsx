@@ -1,5 +1,5 @@
-import { MdDragIndicator, MdEdit, MdClose } from 'react-icons/md';
-import { useState, useRef } from 'react';
+import { MdEdit, MdClose } from 'react-icons/md';
+import { useRef } from 'react';
 
 export default function TodoTask({
 	todoText,
@@ -52,15 +52,14 @@ export default function TodoTask({
 				className="h-4 w-4 mt-2 mx-1 hover:cursor-pointer group-hover:ml-3 transition-all duration-200"
 				checked={isCompleted}
 				onChange={onToggle}
-			></input>
+			/>
 			<div
 				ref={textFieldRef}
 				contentEditable={false}
 				suppressContentEditableWarning
-				style={{
-					textDecoration: isCompleted ? 'line-through' : 'none',
-				}}
-				className="flex-1 bg-transparent min-h-8 leading-8 pr-6 mx-2 break-all focus:outline-none hover:cursor-text "
+				className={`flex-1 bg-transparent min-h-8 leading-8 pr-6 mx-2 break-all focus:outline-none hover:cursor-text ${
+					isCompleted ? 'line-through' : ''
+				}`}
 				onBlur={handleDivBlur}
 				onKeyDown={handleEnterKey}
 				onClick={handleDivClick}

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 export default function TodoInput({ onSubmit }) {
-	const [todoText, setTodoText] = useState('');
+	const [inputText, setInputText] = useState('');
 
-	const handleInputChange = (e) => setTodoText(e.target.value);
+	const handleInputChange = (e) => setInputText(e.target.value);
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
-		onSubmit(todoText);
-		setTodoText('');
+		onSubmit(inputText);
+		setInputText('');
 	};
 
 	return (
@@ -17,12 +17,14 @@ export default function TodoInput({ onSubmit }) {
 		>
 			<input
 				className="flex-1 bg-transparent text-lg outline-none"
-				value={todoText}
+				value={inputText}
 				onChange={handleInputChange}
 				placeholder="Enter a new task"
 			/>
 			<button
-				className="px-2 py-1 text-2xl leading-5 rounded-md text-white bg-gray-200"
+				className={`px-2 py-1 text-2xl leading-5 rounded-md text-white transition-all duration-200 ${
+					inputText.length > 0 ? 'bg-gray-400' : 'bg-gray-200'
+				}`}
 				onClick={handleFormSubmit}
 			>
 				+
