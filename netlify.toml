@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/todo/"
-  to = "https://acelowder-todo.netlify.app/"
-  status = 200
-  force = true
