@@ -1,4 +1,5 @@
 [[redirects]]
-  from = "/todo/*"
-  to = "https://acelowder.netlify.app/:splat"
+  from = "/todo/"
+  to = "https://acelowder.netlify.app/"
   status = 200
+  force = true
