@@ -1,9 +1,12 @@
+import { Routes, Route } from 'react-router-dom';
 import TodoApp from './components/TodoApp';
 
 function App() {
 	return (
 		<main className="flex justify-center">
-			<TodoApp />
+			<Routes>
+				<Route path="/todo" element={<TodoApp />} />
+			</Routes>
 		</main>
 	);
 }
