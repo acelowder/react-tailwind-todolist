@@ -1,4 +1,4 @@
 [[redirects]]
-    from = “/todo“
-    to = “https://acelowder.com/:splat”
+    from = "/todo"
+    to = "https://acelowder.com/:splat"
     status = 200
