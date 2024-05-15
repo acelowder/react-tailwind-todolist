@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/*"
-  to = "https://acelowder.netlify.app/todo/:splat"
+  from = "/todo/*"
+  to = "https://acelowder.netlify.app/:splat"
   status = 200
