@@ -17,7 +17,7 @@ export default function TodoInput({ onSubmit }) {
 			onSubmit={handleFormSubmit}
 		>
 			<input
-				className="flex-1 bg-transparent text-sm outline-none placeholder-zinc-500 text-zinc-300"
+				className="flex-1 bg-transparent outline-none placeholder-zinc-500 text-zinc-300"
 				value={inputText}
 				onChange={handleInputChange}
 				placeholder="Enter a new task"

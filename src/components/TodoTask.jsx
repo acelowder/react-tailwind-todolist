@@ -70,7 +70,7 @@ export default function TodoTask({
 			>
 				<span
 					ref={textFieldRef}
-					className="py-2 text-sm select-none hover:cursor-default focus:outline-none"
+					className="py-2 select-none hover:cursor-default focus:outline-none"
 					onBlur={handleSpanBlur}
 					onKeyDown={handleKeyDown}
 				>
