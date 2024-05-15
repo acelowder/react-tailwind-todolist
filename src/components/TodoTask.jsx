@@ -45,7 +45,7 @@ export default function TodoTask({
 
 	return (
 		<li
-			className="group flex justify-between items-start min-h-12 px-2 py-2 border-b-2 border-zinc-700 border-opacity-60 last:border-b-0 hover:bg-zinc-600 hover:bg-opacity-10 transition duration-200"
+			className="group flex justify-between items-start min-h-12 px-2 py-2 border-b-2 border-zinc-700 border-opacity-20 last:border-b-0 hover:bg-zinc-600 hover:bg-opacity-15 transition duration-200"
 			onClick={onToggle}
 		>
 			<input

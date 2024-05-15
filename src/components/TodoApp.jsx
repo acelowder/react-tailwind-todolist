@@ -77,7 +77,7 @@ export default function TodoApp() {
 		>
 			<TodoTitle />
 			<TodoInput onSubmit={addTodo} />
-			<hr className="mt-2 border-zinc-500 border-opacity-60" />
+			<hr className="mt-2 border-zinc-700" />
 			<TodoList
 				todos={todos}
 				onDelete={removeTodo}

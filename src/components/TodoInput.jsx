@@ -13,7 +13,7 @@ export default function TodoInput({ onSubmit }) {
 
 	return (
 		<form
-			className="flex items-center px-3 py-2 bg-zinc-700 rounded-lg shadow-inner mb-4"
+			className="flex items-center px-3 py-2 mb-3 bg-zinc-700 bg-opacity-50 rounded-lg shadow-inner"
 			onSubmit={handleFormSubmit}
 		>
 			<input
@@ -23,10 +23,10 @@ export default function TodoInput({ onSubmit }) {
 				placeholder="Enter a new task"
 			/>
 			<button
-				className={`px-1.5 text-lg font-bold leading-5 rounded-md text-zinc-700 transition-all duration-200 ${
+				className={`px-1.5 text-lg font-bold leading-5 rounded-md text-zinc-700 bg-zinc-400 transition-all duration-200 ${
 					inputText.length > 0
-						? 'bg-zinc-400'
-						: 'bg-zinc-600 cursor-text'
+						? 'bg-opacity-100'
+						: 'bg-opacity-30 cursor-not-allowed'
 				}`}
 				onClick={handleFormSubmit}
 			>
