@@ -27,10 +27,15 @@ export default function TodoTask({
 		moveTextCursorToEnd();
 	};
 
-	const handleEnterKey = (e) => {
+	const handleKeyDown = (e) => {
 		if (e.key === 'Enter') {
 			e.preventDefault();
 			e.currentTarget.blur();
+		} else if (
+			e.currentTarget.innerText.length === 0 &&
+			(e.key === 'Delete' || e.key === 'Backspace')
+		) {
+			onDelete();
 		}
 	};
 
@@ -67,7 +72,7 @@ export default function TodoTask({
 					ref={textFieldRef}
 					className="py-2 text-sm select-none hover:cursor-default focus:outline-none"
 					onBlur={handleSpanBlur}
-					onKeyDown={handleEnterKey}
+					onKeyDown={handleKeyDown}
 				>
 					{todoText}
 				</span>
