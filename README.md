@@ -4,14 +4,14 @@
 
 This is a simple to-do list built with React and Tailwind CSS. It includes full CRUD (Create, Read, Update, Delete) functionality, with intuitive features like allowing users to mark tasks as complete by clicking on the text, edit tasks by clicking the end of the text, and delete tasks using the backspace key.<br/><br/>
 The to-do list also handles longer tasks that span multiple lines, responsively scales with the browser, saves tasks in local storage, and displays a secret message when you delete all of the tasks.<br/><br/>
-You can view the deployed build at <a href="https://www.acelowder.com/todo">https://www.acelowder.com/todo</a> or by clicking the image below.
+You can view the deployed build at <a href="https://acelowder-todo.netlify.app/">https://acelowder-todo.netlify.app/</a> or by clicking the image below.
 
 &nbsp;
 
-<a href="https://www.acelowder.com/todo"><img src="example.gif" width="1280"></a>
+<a href="https://acelowder-todo.netlify.app/"><img src="example.gif" width="1280"></a>
 <div align="right">
   
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7ea9379c-5c29-4b50-8813-c2fef66699ae/deploy-status)](https://acelowder.com/todo)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7ea9379c-5c29-4b50-8813-c2fef66699ae/deploy-status)](https://acelowder-todo.netlify.app/)
 </div>
 
 ## Future Plans
